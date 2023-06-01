@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FinanceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,8 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+//Finances
+Route::get('/finance/index', [FinanceController::class, 'index'])->name('finance.index');
+Route::post('/finance/index', [FinanceController::class, 'expenseStore'])->name('finance.store');

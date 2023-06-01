@@ -15,8 +15,8 @@
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Inicio') }}
                     </x-nav-link>
-                    <x-nav-link href="#">
-                        {{ __('Sobre') }}
+                    <x-nav-link href="{{ route('finance.index') }}" :active="request()->routeIs('finance.index')">
+                        {{ __('Minhas finanças') }}
                     </x-nav-link>
                     <x-nav-link href="#">
                         {{ __('Contato') }}
