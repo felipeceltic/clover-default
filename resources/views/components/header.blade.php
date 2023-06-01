@@ -11,6 +11,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -26,10 +29,10 @@
     <!-- Lordicon -->
     <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
 </head>
-<header class="fixed w-full">
+<header class="fixed w-full bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
     @guest
-        <div class="container mx-auto px-4 py-2 flex items-center justify-between">
-          <img src="./clover-logo.svg" alt="Logo" class="w-12 h-auto mr-6">
+        <div class="container h-16 mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+          <a href="/"><img src="./clover-logo.svg" alt="Logo" class="w-12 h-auto mr-6"></a>
             <div class="flex items-center">
                 <a href="{{ route('login') }}"
                     class="text-white bg-green-700 hover:bg-green-400 hover:text-gray-900 rounded px-4 py-2 mr-4 transition-all delay-150 duration-400">Login</a>
@@ -44,9 +47,7 @@
 </header>
 
 <body>
-    <div class="font-sans text-gray-900 dark:text-gray-100 antialiased">
-        {{ $slot }}
-    </div>
+    {{ $slot }}
 </body>
 
 </html>

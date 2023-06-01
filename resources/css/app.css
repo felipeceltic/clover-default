@@ -5,3 +5,9 @@
 [x-cloak] {
     display: none;
 }
+
+@layer base {
+        html {
+            font-family: 'Ubuntu Condensed', sans-serif;
+        }
+      }

@@ -1,4 +1,4 @@
-<svg class="w-16 h-16" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+<svg class="w-12 h-12" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 	 viewBox="0 0 512 512" xml:space="preserve">
 <path style="fill:#A0815C;" d="M502.099,245.335c-1.109-1.695-2.711-3.175-4.681-4.326c-12.789-7.473-30.021-11.261-51.217-11.261
 	c-45.595,0-96.934,17.53-99.097,18.276c-6.898,2.379-10.747,8.071-9.297,13.746c1.45,5.675,7.818,9.841,15.38,10.066
