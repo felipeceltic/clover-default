@@ -31,7 +31,7 @@
                     </div>
                     <div class="flex items-center justify-end">
                         <button
-                            class="bg-blue-700 hover:bg-blue-900 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            class="bg-blue-700 hover:bg-blue-900 text-gray-50 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                             type="submit">
                             Salvar
                         </button>
