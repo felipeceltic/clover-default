@@ -14,8 +14,14 @@ class Income extends Model
 
     protected $fillable = [
         'id',
+        'user_id',
         'description',
         'value',
         'date',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

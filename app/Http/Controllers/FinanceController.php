@@ -8,19 +8,30 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Ramsey\Uuid\Uuid;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
 
 class FinanceController extends Controller
 {
     public function index(){
 
-        $expense = Expense::orderBy('created_at', 'desc')->limit(3)->get();
-        $income = Income::orderBy('created_at', 'desc')->limit(3)->get();
+        $user = Auth::user();
+
+        $expense = Expense::where('user_id', $user->id)
+        ->orderBy('created_at', 'desc')
+        ->limit(3)
+        ->get();
+        $income = Income::where('user_id', $user->id)
+        ->orderBy('created_at', 'desc')
+        ->limit(3)
+        ->get();
 
         return view('finance.index', compact('expense', 'income'));
     }
 
     public function expenseStore(Request $request)
     {   
+        $user = Auth::user();
+
         if ($request->repetedespesa > 1) {
 
             $repeat = Collection::times($request->repetedespesa, function ($index) {
@@ -32,6 +43,7 @@ class FinanceController extends Controller
             foreach ($repeat as $r) {
                 $expenserepeat = new Expense;
 
+                $expenserepeat->user_id = $user->id;
                 $expenserepeat->description = $request->descricaodespesa;        
                 $expenserepeat->value = $request->valordespesa/$request->repetedespesa;
                 $repeatoken = Uuid::uuid4()->toString();
@@ -53,6 +65,7 @@ class FinanceController extends Controller
         } else {
             $expense = new Expense;
 
+            $expense->user_id = $user->id;
             $expense->description = $request->descricaodespesa;        
             $expense->value = $request->valordespesa;
             $expense->date = Carbon::parse($request->datadespesa);
@@ -67,7 +80,11 @@ class FinanceController extends Controller
 
     public function incomeStore(Request $request)
     {        
+        $user = Auth::user();
+
         $income = new Income;
+
+        $income->user_id = $user->id;
         $income->description = $request->descricaoreceita;
         $income->value = $request->valorreceita;
         $income->date = Carbon::parse($request->datareceita);
