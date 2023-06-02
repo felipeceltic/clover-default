@@ -31,4 +31,5 @@ Route::middleware([
 
 //Finances
 Route::get('/finance/index', [FinanceController::class, 'index'])->name('finance.index');
-Route::post('/finance/index', [FinanceController::class, 'expenseStore'])->name('finance.store');
+Route::post('/finance/index/expense', [FinanceController::class, 'expenseStore'])->name('finance.expense.store');
+Route::post('/finance/index/income', [FinanceController::class, 'incomeStore'])->name('finance.income.store');

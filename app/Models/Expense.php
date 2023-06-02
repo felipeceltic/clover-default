@@ -15,6 +15,8 @@ class Expense extends Model
     protected $fillable = [
         'id',
         'description',
+        'repeat',
+        'repeatoken',
         'value',
         'date',
     ];

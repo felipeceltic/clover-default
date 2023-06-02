@@ -10,9 +10,11 @@ class Income extends Model
 {
     use HasFactory;
     use SoftDeletes;
+    protected $table = 'income'; 
 
     protected $fillable = [
         'id',
+        'description',
         'value',
         'date',
     ];

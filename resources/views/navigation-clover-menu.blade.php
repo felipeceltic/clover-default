@@ -16,7 +16,10 @@
                         {{ __('Inicio') }}
                     </x-nav-link>
                     <x-nav-link href="{{ route('finance.index') }}" :active="request()->routeIs('finance.index')">
-                        {{ __('Minhas finanças') }}
+                        {{ __('Incluir valores') }}
+                    </x-nav-link>
+                    <x-nav-link href="#">
+                        {{ __('Relatórios') }}
                     </x-nav-link>
                     <x-nav-link href="#">
                         {{ __('Contato') }}
