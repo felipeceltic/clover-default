@@ -18,7 +18,7 @@
                     <x-nav-link href="{{ route('finance.index') }}" :active="request()->routeIs('finance.index')">
                         {{ __('Incluir valores') }}
                     </x-nav-link>
-                    <x-nav-link href="#">
+                    <x-nav-link href="{{ route('reports.index') }}" :active="request()->routeIs('reports.index')||request()->routeIs('reports.expense')||request()->routeIs('reports.income')">
                         {{ __('Relatórios') }}
                     </x-nav-link>
                     <x-nav-link href="#">
